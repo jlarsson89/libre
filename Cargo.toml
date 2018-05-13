@@ -1,6 +1,7 @@
 [package]
-name = "libre"
+name = "libre-reader"
 version = "0.0.1"
 authors = ["Johan Larsson <johan.larsson1989@gmail.com>"]
 
 [dependencies]
+getopts = "0.2"
