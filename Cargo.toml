@@ -5,3 +5,4 @@ authors = ["Johan Larsson <johan.larsson1989@gmail.com>"]
 
 [dependencies]
 getopts = "0.2"
+libusb = "0.3.0"
