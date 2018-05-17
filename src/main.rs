@@ -3,6 +3,8 @@ extern crate libusb;
 use getopts::Options;
 use std::env;
 
+pub mod reader;
+
 fn main() {
     let args: Vec<String> = env::args().collect();
     let _program = args[0].clone();
@@ -23,7 +25,7 @@ fn main() {
         Err(f) => { panic!(f.to_string()) }
     };
     if matches.opt_present("r") {
-        println!("read");
+        reader::read_data();
         return;
     }
     if matches.opt_present("e") {
