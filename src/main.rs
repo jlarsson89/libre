@@ -4,6 +4,7 @@ use getopts::Options;
 use std::env;
 
 pub mod reader;
+pub mod export;
 
 fn main() {
     let args: Vec<String> = env::args().collect();
@@ -29,7 +30,7 @@ fn main() {
         return;
     }
     if matches.opt_present("e") {
-        println!("export");
+        export::export_data();
         return;
     }
 }
