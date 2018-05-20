@@ -23,4 +23,7 @@ fn main() {
         export::export_data();
         return;
     }
+    if args.len() == 1 {
+        println!("No arguments provided.");
+    }
 }
