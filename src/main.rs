@@ -11,6 +11,7 @@ fn main() {
     let mut opts = Options::new();
     opts.optflag("r", "read", "read data");
     opts.optflag("e", "export", "export data");
+    opts.optflag("h", "help", "help");
     let matches = match opts.parse(&args[1..]) {
         Ok(m) => m,
         Err(f) => { panic!(f.to_string()) }
@@ -23,7 +24,12 @@ fn main() {
         export::export_data();
         return;
     }
+    if matches.opt_present("h") {
+        println!("-r --read Read data from reader.");
+        println!("-e --export Export data from database.");
+        return;
+    }
     if args.len() == 1 {
-        println!("No arguments provided.");
+        println!("No arguments provided. Use -h or --help for instructions.");
     }
 }
