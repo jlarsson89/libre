@@ -1,4 +1,11 @@
 extern crate libusb;
+use std::time::Duration;
+
+struct UsbDevice<'a> {
+    handle: libusb::DeviceHandle<'a>,
+    language: libusb::Language,
+    timeout: Duration
+}
 
 pub fn read_data() {
 	let context = libusb::Context::new().unwrap();
