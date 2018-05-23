@@ -7,6 +7,29 @@ struct UsbDevice<'a> {
     timeout: Duration
 }
 
+#[derive(Debug)]
+struct Endpoint {
+    config: u8,
+    iface: u8,
+    setting: u8,
+    address: u8
+}
+
+fn read_device(device: &mut libusb::Device, device_desc: &libusb::DeviceDescriptor, handle: &mut libusb::DeviceHandle) -> libusb::Result<()> {
+    Ok(())
+}
+
+fn find_readable_endpoint(device: &mut libusb::Device, device_desc: &libusb::DeviceDescriptor, transfer_type: libusb::TransferType) -> Option<Endpoint> {
+    None
+}
+
+fn read_endpoint(handle: &mut libusb::DeviceHandle, endpoint: Endpoint, transfer_type: libusb::TransferType) {
+}
+
+fn configure_endpoint<'a>(handle: &'a mut libusb::DeviceHandle, endpoint: &Endpoint) -> libusb::Result<()> {
+    Ok(())
+}
+
 pub fn read_data() {
 	let context = libusb::Context::new().unwrap();
     for mut device in context.devices().unwrap().iter() {
