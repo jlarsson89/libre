@@ -1,5 +1,5 @@
 extern crate libusb;
-extern crate rusqlite;
+//extern crate rusqlite;
 use std::time::Duration;
 
 struct UsbDevice<'a> {
