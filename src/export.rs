@@ -5,12 +5,12 @@ struct Glucose {
     value: f32
 }
 
-struct Basal_injection {
+struct BasalInjection {
     time: String,
     units: f32
 }
 
-struct Bolus_injection {
+struct BolusInjection {
     time: String,
     units: f32
 }
@@ -30,4 +30,13 @@ struct Medication {
 
 pub fn export_data() {
     println!("export");
+}
+
+pub fn export_to_file(file: String) {
+    // should have default filename and location
+    // should append if existing
+}
+
+pub fn export_to_sql(db: String) {
+    // should create database if not existing
 }
